@@ -3,8 +3,8 @@ package HuffMn;
 import java.util.Arrays;
 import java.util.List;
 
-public class table {
-    List<Integer> table = Arrays.asList(
+public class Table {
+    static List<Integer> table = Arrays.asList(
             00000000,
             00000001,
             00000010,
