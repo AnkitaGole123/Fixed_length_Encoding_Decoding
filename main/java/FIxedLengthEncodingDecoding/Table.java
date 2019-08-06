@@ -1,4 +1,4 @@
-package HuffMn;
+package FIxedLengthEncodingDecoding;
 
 import java.util.ArrayList;
 import java.util.List;
