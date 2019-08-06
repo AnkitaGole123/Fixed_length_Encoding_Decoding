@@ -1,4 +1,4 @@
-package FIxedLengthEncodingDecoding;
+package FixedLengthEncodingDecoding;
 
 import java.util.ArrayList;
 import java.util.List;
