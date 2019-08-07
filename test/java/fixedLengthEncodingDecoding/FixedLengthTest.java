@@ -17,7 +17,7 @@ public class FixedLengthTest {
     }
     @Test
     public void itShouldEncodeStringInBinaryAndReadingDataFromTextFile() throws IOException {
-        String expected= "011000010110111001101011011010010111010001100001";
+        String expected= "0110100001100101011011000110110001101111";
         Encoder encoder = new Encoder();
         Table table = new Table();
         FileReader fileReader = new FileReader();
@@ -30,7 +30,7 @@ public class FixedLengthTest {
         FileReader fileReader = new FileReader();
         fixedLengthEncodingDecoding.Writer fileWriter = new Writer();
         String encodingTable = String.valueOf(encoder.encode(fileReader.reader(), table.generateTable()));
-        fileWriter.writer(encodingTable,"/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write");
+        fileWriter.write(encodingTable,"/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write");
         assertEquals(encodingTable, encoder.encode(fileReader.reader(), table.generateTable()));
     }
 }

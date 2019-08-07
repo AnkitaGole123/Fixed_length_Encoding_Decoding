@@ -9,8 +9,8 @@ public class client {
         Table table = new Table();
         Writer fileWriter = new Writer();
         String encodingTable = String.valueOf(encoder.encode(fileReader.reader(), table.generateTable()));
-        fileWriter.writer(encodingTable,"/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write");
+        fileWriter.write(encodingTable,"/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write");
         System.out.println(encodingTable);
-        System.out.println(decoder.getDecoder(encodingTable, table.generateTable()));
+        System.out.println(decoder.getDecodedData(encodingTable, table.generateTable()));
     }
 }
