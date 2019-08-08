@@ -5,13 +5,11 @@ import java.io.IOException;
 import java.util.Scanner;
 
 class FileReader {
-    public String reader() throws IOException
+    public String reader(String path) throws IOException
     {
-        File file = new File("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/ReadFile");
+        File file = new File(path);
         Scanner sc = new Scanner(file);
-        String input = sc.next();
-
-        return input;
+        return String.valueOf(sc.next());
     }
 
 }
