@@ -1,14 +1,10 @@
 package fixedLengthEncodingDecoding;
-
 import org.junit.Test;
-
-import java.io.IOException;
-
 import static org.junit.Assert.assertEquals;
 
 public class BitsTest {
     @Test
-    public void shouldGiveTheNumberOfBitsInWhichUniqueCharacterRepresent() throws IOException {
+    public void shouldGiveTheNumberOfBitsInWhichUniqueCharacterRepresent() {
         UniqueCharacter uniqueCharacter = new UniqueCharacter();
         Bits bits =new Bits();
         int expected = 3;
