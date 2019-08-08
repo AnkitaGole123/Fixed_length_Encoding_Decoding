@@ -24,6 +24,6 @@ public class FixedLengthTest {
         writer.write(encoded, "/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write");
         String actual = fileReade.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write");
         assertEquals(expected, actual);
-
     }
+
 }
