@@ -1,7 +1,5 @@
 package fixedLengthEncodingDecoding;
-
 import java.io.*;
-
 public class Writer {
         public void write(byte[] encodedData, String path) {
 

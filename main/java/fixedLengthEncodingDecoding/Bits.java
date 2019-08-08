@@ -1,5 +1,4 @@
 package fixedLengthEncodingDecoding;
-
 class Bits {
     int getBites(Integer numberOfUniqueCharacter){
         for (int i = 0; i < numberOfUniqueCharacter; i++) {

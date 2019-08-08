@@ -1,12 +1,10 @@
 package fixedLengthEncodingDecoding;
-
 import java.io.IOException;
 public class client {
 
     public static void main(String[] args) throws IOException {
         UniqueCharacter uniqueCharacter = new UniqueCharacter();
         Encoder encoder = new Encoder();
-        Decoder decoder = new Decoder();
         Bits bits =new Bits();
         FileReader fileReader = new FileReader();
         System.out.println(uniqueCharacter.countCharacter(fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/ReadFile")));

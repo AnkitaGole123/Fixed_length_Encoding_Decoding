@@ -1,7 +1,5 @@
 package fixedLengthEncodingDecoding;
-
 import java.util.Map;
-
 public class Encoder {
     public byte[] encode(String input, Map<Integer,String> table){
         byte[] bytes = new byte[input.length()];
