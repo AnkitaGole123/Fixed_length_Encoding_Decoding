@@ -1,15 +1,13 @@
 package fixedLengthEncodingDecoding;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BitsTable {
-
-    public  Map<Integer,String> generateTable() {
-        Map<Integer,String> table = new HashMap<>();
+    public List<String> generateTable(Integer countCharacter) {
+        List<String> table = new ArrayList<>();
         Bits bits = new Bits();
-        Bytes bytes = new Bytes();
-        for (int i = 0; i < bytes.getBytes(); i++) {
+        for (int i = 0; i < countCharacter; i++) {
             String binaryNumber = Integer.toBinaryString(i);
             StringBuilder fixed = new StringBuilder();
             int binary = bits.getBites(5) - binaryNumber.length();
@@ -17,7 +15,7 @@ public class BitsTable {
                 fixed.append("0");
             }
             fixed.append(binaryNumber);
-            table.put(i,fixed.toString());
+            table.add(fixed.toString());
         }
         return table;
     }
