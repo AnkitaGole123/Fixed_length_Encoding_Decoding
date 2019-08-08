@@ -26,12 +26,5 @@ public class FixedLengthTest {
         assertEquals(expected, actual);
     }
 
-    @Test public void shouldGiveTheNumberOfBitsInWhichUniqueCharacterRepresent() throws IOException {
-        UniqueCharacter uniqueCharacter = new UniqueCharacter();
-        Bits bits =new Bits();
-        FileReader fileReader = new FileReader();
-        int expected = 3;
-        Integer numberOfUniqueCharacter = uniqueCharacter.countCharacter(fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write"));
-        assertEquals(expected,bits.getBites(numberOfUniqueCharacter));
-    }
+
 }
