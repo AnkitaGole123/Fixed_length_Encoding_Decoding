@@ -18,4 +18,20 @@ public class Table {
         }
         return table;
     }
+    public Map<Integer, String> generateUpperBinaryTable() {
+
+        Map<Integer, String> encoding = new HashMap<>();
+        int diff = 'a' - 'A';
+
+        for (char i = 'A'; i < 'z'; i++) {
+            if (i >= 'a') {
+                encoding.put((int) i, Integer.toBinaryString(i - diff));
+            } else {
+                encoding.put((int) i, Integer.toBinaryString(i));
+            }
+        }
+
+        return encoding;
+    }
+
 }

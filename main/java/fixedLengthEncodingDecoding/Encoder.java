@@ -1,14 +1,13 @@
 package fixedLengthEncodingDecoding;
 
-import java.util.List;
 import java.util.Map;
 
 public class Encoder {
-    public String encode(String input, Map<Integer,String> table){
-        StringBuilder encoderInput = new StringBuilder();
+    public byte[] encode(String input, Map<Integer,String> table){
+        byte[] bytes = new byte[input.length()];
         for (int i=0; i < input.length(); i++){
-            encoderInput.append(table.get((int)input.charAt(i)));
+            bytes[i] = Byte.parseByte((table.get((int)input.charAt(i))),2);
         }
-        return encoderInput.toString();
+        return bytes;
     }
 }

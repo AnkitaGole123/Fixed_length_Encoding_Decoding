@@ -15,13 +15,13 @@ public class Decoder {
         return decodedData.toString();
     }
     private List<String> convertStringToList(String encodedData) {
-        String data = "";
+        StringBuilder data = new StringBuilder();
         List<String> encoded = new ArrayList<>();
         for (int i = 0; i < encodedData.length(); i++) {
-            data += encodedData.charAt(i);
+            data.append(encodedData.charAt(i));
             if (data.length() == 8) {
-                encoded.add(data);
-                data = "";
+                encoded.add(data.toString());
+                data = new StringBuilder();
             }
         }return encoded;
     }

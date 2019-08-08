@@ -1,5 +1,6 @@
 package fixedLengthEncodingDecoding;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class client {
     public static void main(String[] args) throws IOException {
@@ -8,9 +9,9 @@ public class client {
         FileReader fileReader = new FileReader();
         Table table = new Table();
         Writer fileWriter = new Writer();
-        String encodingTable = String.valueOf(encoder.encode(fileReader.reader(), table.generateTable()));
+        byte[] encodingTable = encoder.encode(fileReader.reader(), table.generateUpperBinaryTable());
         fileWriter.write(encodingTable,"/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write");
-        System.out.println(encodingTable);
-        System.out.println(decoder.getDecodedData(encodingTable, table.generateTable()));
+        System.out.println(Arrays.toString(encodingTable));
+//        System.out.println(decoder.getDecodedData(encodingTable, table.generateTable()));
     }
 }

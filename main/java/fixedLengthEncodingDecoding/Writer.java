@@ -2,15 +2,14 @@ package fixedLengthEncodingDecoding;
 
 import java.io.*;
 
-
-
 public class Writer {
-    public void write(String encodedData, String path) {
-        File filePath = new File(path);
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(filePath))) {
-            bw.write(encodedData);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        public void write(byte[] encodedData, String path) {
+            File file = new File(path);
+            try (FileOutputStream fileOutputStream = new FileOutputStream(file)) {
+                fileOutputStream.write(encodedData);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
     }
+
 }
