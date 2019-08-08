@@ -25,5 +25,10 @@ public class FixedLengthTest {
         String actual = fileReade.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write");
         assertEquals(expected, actual);
     }
-
+    @Test public void shouldGiveTheNumberOfUniqueCharacter() throws IOException {
+        UniqueCharacter uniqueCharacter = new UniqueCharacter();
+        FileReader fileReader = new FileReader();
+        Integer expected = 5;
+        assertEquals(expected,uniqueCharacter.countCharacter(fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write")));
+    }
 }
