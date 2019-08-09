@@ -10,9 +10,11 @@ public class client {
         FileReader fileReader = new FileReader();
         Table table = new Table();
         Writer fileWriter = new Writer();
+
         byte[] encodingTable = encoder.encode(fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/ReadFile"), table.generateUpperBinaryTable());
         fileWriter.write(encodingTable, "/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write");
         System.out.println(fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write"));
-        System.out.println(bits.getBites(uniqueCharacter.countCharacter(fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/ReadFile"))));
+        Integer countCharacter = uniqueCharacter.countCharacter(fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/ReadFile"));
+        System.out.println(bits.getBites(countCharacter));
     }
 }
