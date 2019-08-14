@@ -1,5 +1,8 @@
 package fixedLengthEncodingDecoding;
 import org.junit.Test;
+
+import java.util.HashSet;
+
 import static org.junit.Assert.assertEquals;
 
 public class BitsTest {
@@ -8,7 +11,7 @@ public class BitsTest {
         UniqueCharacter uniqueCharacter = new UniqueCharacter();
         Bits bits =new Bits();
         int expected = 3;
-        Integer numberOfUniqueCharacter = uniqueCharacter.countCharacter("ankita");
+        HashSet<Character> numberOfUniqueCharacter = uniqueCharacter.countCharacter("ankita");
         assertEquals(expected,bits.getBites(numberOfUniqueCharacter));
     }
 }
