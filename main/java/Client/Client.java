@@ -19,6 +19,7 @@ public class Client {
         BitsTable bitsTable = new BitsTable();
         FileReader fileReader = new FileReader();
         Writer fileWriter = new Writer();
+        ByteConverter byteConverter = new ByteConverter();
 
         String userInput = fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/Outputs/ReadFile");
         Set uniqueCharactersSet = uniqueCharacter.countCharacter(userInput);
@@ -26,7 +27,9 @@ public class Client {
         Map<Character, String> bitTable = bitsTable.generateTable(bit, uniqueCharactersSet);
         tableWriter.writer(bitTable);
         List<Boolean> userInputEncoded = encoder.encode(userInput, bitTable);
-        System.out.println(userInputEncoded);
-        
+
+        byte[] bytes = byteConverter.toBytes(userInputEncoded);
+        fileWriter.write(bytes,"/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/Outputs/Encode");
+
     }
 }
