@@ -1,5 +1,6 @@
 package fixedLengthEncodingDecoding;
 
+import ReaderWriter.FileReader;
 import org.junit.Test;
 
 import java.io.IOException;

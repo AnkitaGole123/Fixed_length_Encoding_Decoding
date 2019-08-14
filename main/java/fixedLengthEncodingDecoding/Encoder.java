@@ -1,11 +1,25 @@
 package fixedLengthEncodingDecoding;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
+
 public class Encoder {
-    public byte[] encode(String input, Map<Integer,String> table){
-        byte[] bytes = new byte[input.length()];
-        for (int i=0; i < input.length(); i++){
-            bytes[i] = Byte.parseByte((table.get((int)input.charAt(i))),2);
+    public List<Boolean> encode(String userInput, Map<Character, String> table) {
+        List<Boolean> encodedData = new ArrayList<>();
+        for (int i = 0; i < userInput.length(); i++) {
+            char character = userInput.charAt(i);
+            String encodedBitsForACharacter = table.get(character);
+
+            String[] splits = encodedBitsForACharacter.split("");
+            for (String split : splits) {
+                if (split.equals("0")) {
+                    encodedData.add(false);
+                } else {
+                    encodedData.add(true);
+                }
+            }
         }
-        return bytes;
+        return encodedData;
     }
+
 }

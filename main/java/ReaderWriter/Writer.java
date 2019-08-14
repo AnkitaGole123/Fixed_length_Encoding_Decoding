@@ -1,4 +1,4 @@
-package fixedLengthEncodingDecoding;
+package ReaderWriter;
 
 import java.io.*;
 import java.util.List;

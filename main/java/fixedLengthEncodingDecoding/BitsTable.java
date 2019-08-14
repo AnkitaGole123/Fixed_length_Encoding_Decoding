@@ -1,23 +1,25 @@
 package fixedLengthEncodingDecoding;
 
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class BitsTable {
-    public List<String> generateTable(Integer countCharacter) {
-        List<String> table = new ArrayList<>();
-        Bits bits = new Bits();
-        for (int i = 0; i < countCharacter; i++) {
-            String binaryNumber = Integer.toBinaryString(i);
+    public Map<Character, String> generateTable(int bit, Set uniqueCharacters) {
+        Map<Character, String> bits = new HashMap<>();
+
+        int bin = 0;
+        for (Object word : uniqueCharacters) {
+            char word1 = (char) word;
+            String binaryNumber = Integer.toBinaryString(bin);
             StringBuilder fixed = new StringBuilder();
-            int binary = bits.getBites(5) - binaryNumber.length();
-            for (int j = 0; j < binary; j++) {
+            for (int j = 0; j < bit - binaryNumber.length(); j++) {
                 fixed.append("0");
             }
             fixed.append(binaryNumber);
-            table.add(fixed.toString());
+            bits.put(word1, fixed.toString());
+            bin += 1;
+
         }
-        return table;
+        return bits;
     }
+
 }

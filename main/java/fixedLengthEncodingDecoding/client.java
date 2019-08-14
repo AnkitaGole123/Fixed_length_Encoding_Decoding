@@ -1,19 +1,33 @@
 package fixedLengthEncodingDecoding;
+import ReaderWriter.FileReader;
+import ReaderWriter.TableWriter;
+import ReaderWriter.Writer;
+
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
 public class client {
 
     public static void main(String[] args) throws IOException {
+        ByteConvertor byteConvertor = new ByteConvertor();
         UniqueCharacter uniqueCharacter = new UniqueCharacter();
+        Bits bits = new Bits();
         Encoder encoder = new Encoder();
         TableWriter tableWriter = new TableWriter();
         BitsTable bitsTable = new BitsTable();
         FileReader fileReader = new FileReader();
-        Table table = new Table();
         Writer fileWriter = new Writer();
-        String userInput = fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/ReadFile");
-        tableWriter.writer(bitsTable.generateTable(uniqueCharacter.countCharacter(userInput)));
-        byte[] encodingTable = encoder.encode(fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/ReadFile"), table.generateUpperBinaryTable());
-        fileWriter.write(encodingTable, "/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write");
-        System.out.println(fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/Write"));
+        String userInput = fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/Outputs/ReadFile");
+        Set uniqueCharactersSet = uniqueCharacter.countCharacter(userInput);
+        int bit = bits.getBites(uniqueCharactersSet.size());
+        Map<Character, String> bitTable = bitsTable.generateTable(bit, uniqueCharactersSet);
+        tableWriter.writer(bitTable);
+
+        List<Boolean> userInputEncoded = encoder.encode(userInput, bitTable);
+        byte[] bytes = byteConvertor.toBytes(userInputEncoded);
+
+        fileWriter.write(bytes, "/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/Outputs/EncodedData");
     }
 }
