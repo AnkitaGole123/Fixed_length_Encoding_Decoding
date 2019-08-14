@@ -29,7 +29,7 @@ public class Client {
         List<Boolean> userInputEncoded = encoder.encode(userInput, bitTable);
 
         byte[] bytes = byteConverter.toBytes(userInputEncoded);
-        fileWriter.write(bytes,"/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/Outputs/Encode");
+        fileWriter.write(bytes,"/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/Outputs/EncodeData");
 
     }
 }
