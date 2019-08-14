@@ -12,6 +12,6 @@ public class BitsTest {
         Bits bits =new Bits();
         int expected = 3;
         HashSet<Character> numberOfUniqueCharacter = uniqueCharacter.countCharacter("ankita");
-        assertEquals(expected,bits.getBites(numberOfUniqueCharacter));
+        assertEquals(expected,bits.getBites(numberOfUniqueCharacter.size()));
     }
 }

@@ -1,7 +1,6 @@
 package fixedLengthEncodingDecoding;
 
 import ReaderWriter.FileReader;
-import ReaderWriter.Writer;
 import org.junit.Test;
 import java.io.IOException;
 
@@ -12,19 +11,6 @@ public class FixedLengthTest {
     public void itShouldEncodeStringInBinaryAndReadingDataFromTextFile() throws IOException {
         String expected= "ankita";
         FileReader fileReader = new FileReader();
-        assertEquals(expected, fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/ReadFile"));
-    }
-    @Test
-    public void stringShouldEncodedInBinary() throws IOException {
-        String expected = "ANKITA";
-        Encoder encoder = new Encoder();
-        Table table = new Table();
-        FileReader fileReade = new FileReader();
-        Writer writer = new Writer();
-        String userInput =fileReade.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/ReadFile");
-        byte[] encoded = encoder.encode(userInput, table.generateUpperBinaryTable());
-        writer.write(encoded, "/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/EncodedData");
-        String actual = fileReade.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/fixedLengthEncodingDecoding/EncodedData");
-        assertEquals(expected, actual);
+        assertEquals(expected, fileReader.reader("/Users/ankita.gole/Documents/IdeaProjects/HuffMN/src/main/java/Outputs/ReadFile"));
     }
 }
